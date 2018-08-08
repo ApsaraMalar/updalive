@@ -16,7 +16,7 @@ if(!empty($sessData['status']['msg'])){
 
     <?php
         if(!empty($sessData['userLoggedIn']) && !empty($sessData['userID'])){
-            include 'user.php';
+            include 'userMock.php';
             $user = new User();
             $conditions['where'] = array(
                 'id' => $sessData['userID'],
@@ -25,11 +25,11 @@ if(!empty($sessData['status']['msg'])){
             $userData = $user->getRows($conditions);
     ?>
 	
-	 <a href="userAccount.php?logoutSubmit=1" class="logout">LOGOUT</a>
+	 <a href="userAccountMock.php?logoutSubmit=1" class="logout">LOGOUT</a>
 	</br>
 
 <?php
-header("Location:mocklocal/wordpress/thermocontent/");
+header("Location:mocklocal/wordpress/paid-mock-test/");
 die();
 ?>
 	 
@@ -38,7 +38,7 @@ die();
     <h2><center>Login to Your Account</h2>
     <?php echo !empty($statusMsg)?'<p class="'.$statusMsgType.'">'.$statusMsg.'</p>':''; ?>
     <div class="regisFrm">
-        <form action="userAccount.php" method="post">
+        <form action="userAccountMock.php" method="post">
             <input type="email" name="email" placeholder="EMAIL" required="">
             <input type="password" name="password" placeholder="PASSWORD" required="">
             <div class="send-button">

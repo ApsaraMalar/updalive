@@ -44,6 +44,10 @@ h2 {
     font-family: 'Roboto', sans-serif;
 	
 }
+.regisFrm p{
+	color:#005ce6;
+	font-size:33px;
+}
 .send-button {
     text-align: center;
     margin-top: 20px;
@@ -152,12 +156,14 @@ body {
 }
 
 /* Modal Content */
+
 .modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 30px;
     border: 1px solid #888;
     width: 80%;
+	color: #000000;
 }
 
 /* The Close Button */
@@ -182,7 +188,7 @@ body {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 19px;
+    font-size: 20px;
     margin: 4px 2px;
     cursor: pointer;
 }
