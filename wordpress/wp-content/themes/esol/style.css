@@ -257,7 +257,7 @@ ul,ol{
 .icon-bar span {
  color:#fff !important;
 }
- .uthor-image{
+ .author-image{
     width: 86px;
     height: 86px;
     border-radius: 2px;
@@ -346,7 +346,7 @@ ul,ol{
 	padding:0 !important;
 }
 .navbar-nav > li > a > i {
-    font-size: 18px;
+    font-size: 25px;
     line-height: 20px;
     margin-left: 5px;
     padding-top: 0;
@@ -2357,12 +2357,13 @@ div#calendar_wrap table>caption {
     border-radius: 4px !important;
 	width:25% !important;}
 .navbar-header h1 a{ 
-	font-family: cursive !important;
-    font-weight: 900; }
+	font-family: Swis721 BlkCn BT !important;
+    font-weight: 900;
+font-size:50px;	}
 	
 .site-logo, .site-branding h1 a { margin-top:-30px !important; }
 .site-branding h1{margin: 15px 0px 0px !important;}
-.site-branding  p { font-family: cursive !important; margin:0px !important;}
+.site-branding  p { font-family: Swis721 BlkCn BT !important; margin:0px !important;font-size:26px;}
 .site-branding a img{ margin-top:30px !important;max-height:100%;max-width:100%; }
 
 /* Header image style */

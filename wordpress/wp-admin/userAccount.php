@@ -16,10 +16,12 @@ if(isset($_POST['loginSubmit'])){
         $userData = $user->getRows($conditions);
         //set user data and status based on login credentials
         if($userData){
+			$SESSION['username'] = $userData['username'];
             $sessData['userLoggedIn'] = TRUE;
             $sessData['userID'] = $userData['id'];
+			$sessData['username']=$userData['username'];
             $sessData['status']['type'] = 'success';
-            $sessData['status']['msg'] = 'Welcome '.$userData['first_name'].'!';
+            $sessData['status']['msg'] = 'Welcome '.$userData['username'].'!';
         }else{
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = 'Wrong email or password, please try again.'; 

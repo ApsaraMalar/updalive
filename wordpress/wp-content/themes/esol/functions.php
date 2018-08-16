@@ -1,4 +1,9 @@
 <?php
+function register_my_session()
+{
+	session_start();
+}
+add_action('init', 'register_my_session',1);
 /*
 	*Theme Name	: Esol
 	*Theme Core Functions and Codes
@@ -79,6 +84,7 @@ function esol_header_style() {
 	if ( display_header_text() ) {
 		return;
 	}
+
 	?>
 	<style type="text/css" id="esol-header-css">
 		.site-branding {
@@ -95,6 +101,19 @@ function esol_header_style() {
 	<?php
 }
 endif; 
+
+add_filter( 'wp_nav_menu_items', 'wti_loginout_menu_link', 10, 2 );
+
+function wti_loginout_menu_link( $items, $args ) {
+   if ($args->theme_location == 'primary') {
+      if (isset($_SESSION['sessData'])) {
+         $items .= '<li class="right"><a href="https://www.updatraining.com/wp-admin/logout.php">'. __("LOGOUT") .'</a></li>';
+      } else {
+         $items .= '<li class="right"><a href="https://www.updatraining.com/wp-admin/loginIndex.php">'. __("LOGIN") .'</a></li>';
+      }
+   }
+   return $items;
+}
 
 function custom_excerpt_length( $length ) {
 	return 30;

@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * The base configuration for WordPress
  *
@@ -20,13 +21,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'updamock');
+define('DB_NAME', 'nirupan_updamech');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'nirupan_admin');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD','niru@2089');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -54,6 +55,11 @@ define('AUTH_SALT',        'put your unique phrase here');
 define('SECURE_AUTH_SALT', 'put your unique phrase here');
 define('LOGGED_IN_SALT',   'put your unique phrase here');
 define('NONCE_SALT',       'put your unique phrase here');
+<<<<<<< Updated upstream
+=======
+define( 'WPMS_ON', true );
+define( 'WPMS_SMTP_PASS', 'niruaps@2031' );
+>>>>>>> Stashed changes
 
 /**#@-*/
 
@@ -86,4 +92,8 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
+<<<<<<< Updated upstream
 require_once(ABSPATH . 'wp-settings.php');
+=======
+require_once(ABSPATH . 'wp-settings.php');
+>>>>>>> Stashed changes

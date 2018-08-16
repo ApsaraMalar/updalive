@@ -1,5 +1,8 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> >
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<?php 
@@ -84,7 +87,8 @@
 				</div> 
 		   </div>
 			<div class="collapse navbar-collapse">
-				<?php	wp_nav_menu( array(  
+				<?php	
+				wp_nav_menu( array(  
 										'theme_location' => 'primary',
 										'container'  => 'collapse navbar-collapse',
 										'menu_class' => 'nav navbar-nav navbar-right',
@@ -106,4 +110,3 @@
 					</a>
 				</div><!-- .header-image -->
 			<?php endif; // End header image check. ?>
-  <!-- end header -->

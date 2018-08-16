@@ -1,9 +1,5 @@
-<?php require('includes/config.php');
-
-//logout
-$user->logout(); 
-
-//logged in return to index page
-header('Location:login-index.php');
-exit;
+<?php
+session_start(); 
+session_destroy(); 
+header("Location: https://www.updatraining.com/"); 
 ?>

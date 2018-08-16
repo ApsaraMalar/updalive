@@ -1,11 +1,11 @@
-<?php 
+<?php
+session_start(); 
 function esol_page_menu_args( $esol_args ) {
 	if ( ! isset( $esol_args['show_home'] ) )
 		$esol_args['show_home'] = true;
 	return $esol_args;
 }
 add_filter( 'wp_page_menu_args', 'esol_page_menu_args' );
-
  
 function esol_fallback_page_menu( $esol_args = array() ) {
 
@@ -48,6 +48,7 @@ function esol_fallback_page_menu( $esol_args = array() ) {
 
 	$esol_menu = '<div class="' . esc_attr($esol_args['container_class']) . '">' . $esol_menu . "</div>\n";
 	$esol_menu = apply_filters( 'wp_page_menu', $esol_menu, $esol_args );
+
 	if ( $esol_args['echo'] )
 		echo wp_kses_post($esol_menu);
 	else

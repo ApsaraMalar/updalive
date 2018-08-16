@@ -1,4 +1,4 @@
- 1<?php get_header(); ?>
+<?php get_header(); ?>
 <!-- Page heading Section -->
 <?php esol_breadcrumbs(); ?>	
 <!-- Page heading Section -->

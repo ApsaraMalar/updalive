@@ -1,9 +1,9 @@
 <?php
 class User{
     private $dbHost     = "localhost";
-    private $dbUsername = "root";
-    private $dbPassword = "";
-    private $dbName     = "updamock";
+    private $dbUsername = "nirupan_admin";
+    private $dbPassword = "niru@2089";
+    private $dbName     = "nirupan_updamech";
     private $userTbl    = "users";
     
     public function __construct(){
