@@ -31,14 +31,9 @@ if (!empty($sessData['userLoggedIn']) && !empty($sessData['userID'])) {
 	<a href="userAccountMock.php?logoutSubmit=1" class="logout">LOGOUT</a>
 	</br>
 <?php
-<<<<<<< Updated upstream
-header("Location:mocklocal/wordpress/paid-mock-test/");
-die();
-=======
-    header("Location:  https://www.updatraining.com/combinedmock/");
-    exit();
+header("Location:  https://www.updatraining.com/combinedmock/");
+exit();
 } else {
->>>>>>> Stashed changes
 ?>
 	<div class="container1">
     <h2><center>Login to Your Account</h2>
@@ -51,11 +46,11 @@ die();
             <input type="password" name="password" placeholder="PASSWORD" required="">
             <div class="send-button">
                 <input type="submit" name="loginSubmit" value="LOGIN">
-            </div>
+            <</div>
         </form>
-        <p><br/>Don't have an account? No worries!!</br>
+        <p><br/>Don't have an account?</br>
 		<br>
-		<button class="button" id="myBtn">Contact Us To Grab Your Login!!</button>
+		<button class="button" id="myBtn">Please Contact Us To Grab Your Login</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -63,8 +58,7 @@ die();
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Please Feel Free to Catch us at:</br>
-	</br>
+	<p>
 	<img src="https://www.updatraining.com/wp-content/themes/esol/images/mail.jpg" width="50" height="33">
 	admin@updatraining.com</br></br>
 	<img src="https://www.updatraining.com/wp-content/themes/esol/images/phone.jpg" width="50" height="33">

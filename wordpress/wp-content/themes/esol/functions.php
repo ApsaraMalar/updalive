@@ -23,7 +23,8 @@ add_action('init', 'register_my_session',1);
 	require( ESOL_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php');
 	require_once('esol_breadcrumbs.php');
 
-add_action( 'after_setup_theme', 'esol_setup' ); 	
+add_action( 'after_setup_theme', 'esol_setup' ); 
+	
 		function esol_setup()
 		{	// Load text domain for translation-ready
 			load_theme_textdomain( 'esol', ESOL_THEME_FUNCTIONS_PATH . '/lang' );
@@ -106,9 +107,15 @@ add_filter( 'wp_nav_menu_items', 'wti_loginout_menu_link', 10, 2 );
 
 function wti_loginout_menu_link( $items, $args ) {
    if ($args->theme_location == 'primary') {
+	   $link = mysqli_connect("localhost", "nirupan_admin", "niru@2089", "nirupan_updamech");
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+
       if (isset($_SESSION['sessData'])) {
          $items .= '<li class="right"><a href="https://www.updatraining.com/wp-admin/logout.php">'. __("LOGOUT") .'</a></li>';
-      } else {
+} 
+else {
          $items .= '<li class="right"><a href="https://www.updatraining.com/wp-admin/loginIndex.php">'. __("LOGIN") .'</a></li>';
       }
    }
@@ -119,4 +126,40 @@ function custom_excerpt_length( $length ) {
 	return 30;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+//[html5_video] Short code to add HTML5 video to a post
+function gen_html_vid($atts, $content=null) {
+    $vid_ret='<video controls';
+    extract( shortcode_atts( array(
+        'poster' => 'no',
+        'preload' => 'metadata',
+        'mp4' => 'no',
+        'webm' => 'no',
+        'ogg' => 'no',
+        'resize' => 'no',
+        'width' => '200',
+        'height' => '150',
+        'muted' => 'no'
+    ), $atts ) );
+    if($resize <> 'no') {
+        $vid_ret .= ' width="' . $width . '"';
+        $vid_ret .= ' height="' . $height . '"';
+    }
+    if($poster <> 'no')
+        $vid_ret .= ' poster="' . $poster . '"';
+    if($muted <> 'no')
+        $vid_ret .= ' muted';
+    $vid_ret .= ' preload="';
+    $vid_ret .= $preload . '">';
+    if($mp4 <> 'no')
+        $vid_ret .= '<source src="' . $mp4 . '" type="video/mp4"/>';
+    if($webm <> 'no')
+        $vid_ret .= '<source src="' . $webm . '" type="video/webm"/>';
+    if($ogg <> 'no')
+        $vid_ret .= '<source src="' . $ogg . '" type="video/ogg"/>';
+    $vid_ret .= "Video not supported.";
+    $vid_ret .= '</video>';
+    return $vid_ret;
+}
+add_shortcode('html5_video', 'gen_html_vid');
 ?>

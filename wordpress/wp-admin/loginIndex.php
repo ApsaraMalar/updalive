@@ -7,6 +7,7 @@ if (!empty($sessData['status']['msg'])) {
     $statusMsgType = $sessData['status']['type'];
     unset($_SESSION['sessData']['status']);
 }
+
 ?>
 <html>
 <head>
@@ -22,19 +23,24 @@ if (!empty($sessData['userLoggedIn']) && !empty($sessData['userID'])) {
     );
     $conditions['return_type'] = 'single';
     $userData                  = $user->getRows($conditions);
-?>
-	<a href="userAccount.php?logoutSubmit=1" class="logout">LOGOUT</a>
-	</br>
-<?php
-<<<<<<< Updated upstream
-header("Location:mocklocal/wordpress/thermocontent/");
-die();
-=======
-$SESSION['is_user_logged_in']=true;
-    header("Location: https://www.updatraining.com/welcomelogin");
-    exit();
-} else {
->>>>>>> Stashed changes
+
+$link = mysqli_connect("localhost", "nirupan_admin", "niru@2089", "nirupan_updamech");
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+$login_id= $sessData['userID'];
+$username=$sessData['username'];
+$token = $_SESSION['token'];
+ $_SESSION['token'] = $token;
+ 
+$_SESSION['loginID'] = $login_id;
+$_SESSION['log'] = "yes";
+$sql_login="UPDATE users SET updatedTimestamp= NOW() where id = '$login_id' ";
+$upd=mysqli_query($link, $sql_login); 
+header("Location: https://www.updatraining.com/welcomelogin");
+exit();
+} 
+else {
 ?>
 	<div class="container1">
     <h2><center>Login to Your Account</h2>
@@ -49,9 +55,9 @@ $SESSION['is_user_logged_in']=true;
                 <input type="submit" name="loginSubmit" value="LOGIN">
             </div>
         </form>
-        <p><br/>Don't have an account? No worries!!</br>
+        <p><br/>Don't have an account?</br>
 		<br>
-		<button class="button" id="myBtn">Contact Us To Grab Your Login!!</button>
+		<button class="button" id="myBtn">Please Contact Us To Grab Your Login</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -59,8 +65,7 @@ $SESSION['is_user_logged_in']=true;
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Please Feel Free to Catch us at:</br>
-	</br>
+    <p>
 	<img src="https://www.updatraining.com/wp-content/themes/esol/images/mail.jpg" width="50" height="33">
 	admin@updatraining.com</br></br>
 	<img src="https://www.updatraining.com/wp-content/themes/esol/images/phone.jpg" width="50" height="33">

@@ -71,14 +71,13 @@ session_start();
 			  </button>
 				<div class="site-logo">
 					<div class="site-branding">
-							<?php esol_the_custom_logo(); ?>
-
-							<?php if ( is_front_page() && is_home() ) : ?>
+							<?php esol_the_custom_logo(); 
+							if ( is_front_page() && is_home() ) : ?>
 								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></h1>
 							<?php else : ?>
 								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></p>
 							<?php endif;
-
+							
 							$esol_description = get_bloginfo( 'description', 'display' );
 							if ( $esol_description || is_customize_preview() ) : ?>
 								<p class="site-description"><?php echo esc_html($esol_description); ?></p>
@@ -88,14 +87,43 @@ session_start();
 		   </div>
 			<div class="collapse navbar-collapse">
 				<?php	
-				wp_nav_menu( array(  
+				if( is_single( array('1600','2223','2078','2041','2017','2021','1993','1995','1883','1885','1560','1558','1554','1552','1547','1545','1542','1540','1536','1534','1529','1527','1524','1519','891','884','1619','1614','1718','1845','1849'))) { 
+
+	wp_nav_menu( array(  
 										'theme_location' => 'primary',
+										'menu' => 'secondary',
 										'container'  => 'collapse navbar-collapse',
 										'menu_class' => 'nav navbar-nav navbar-right',
 										'fallback_cb' => 'esol_fallback_page_menu',
 										'walker' => new esol_nav_walker()
 										)
-			);	?> 
+			);
+
+} elseif( is_page( array('861'))) { 
+
+	wp_nav_menu( array(  
+										'theme_location' => 'primary',
+										'menu' => 'secondary',
+										'container'  => 'collapse navbar-collapse',
+										'menu_class' => 'nav navbar-nav navbar-right',
+										'fallback_cb' => 'esol_fallback_page_menu',
+										'walker' => new esol_nav_walker()
+										)
+			);
+
+} else { 
+
+	wp_nav_menu( array(  
+										'theme_location' => 'primary',
+										'menu' => 'primary',
+										'container'  => 'collapse navbar-collapse',
+										'menu_class' => 'nav navbar-nav navbar-right',
+										'fallback_cb' => 'esol_fallback_page_menu',
+										'walker' => new esol_nav_walker()
+										)
+			);
+}
+				?> 
 			</div><!--/.nav-collapse -->
 		</div>
     </div>

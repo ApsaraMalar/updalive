@@ -58,7 +58,7 @@ define('NONCE_SALT',       'put your unique phrase here');
 <<<<<<< Updated upstream
 =======
 define( 'WPMS_ON', true );
-define( 'WPMS_SMTP_PASS', 'niruaps@2031' );
+define( 'WPMS_SMTP_PASS', 'niruaps@3308' );
 >>>>>>> Stashed changes
 
 /**#@-*/
