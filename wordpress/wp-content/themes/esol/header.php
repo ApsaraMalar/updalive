@@ -12,7 +12,17 @@ session_start();
 
 	<?php wp_head(); ?>
   </head>
-<body <?php body_class(); ?> ><style>.page-heading-section {    background: url('<?php  echo esc_url($esol_header_setting['slider_image_one1']); ?>') no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);    margin: 0 0 0px;    overflow: hidden;    padding: 0;    width: 100%;    margin-top: 0px !important;}</style>
+<body <?php body_class(); ?> >
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123354611-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123354611-1');
+</script>
+<style>.page-heading-section {    background: url('<?php  echo esc_url($esol_header_setting['slider_image_one1']); ?>') no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);    margin: 0 0 0px;    overflow: hidden;    padding: 0;    width: 100%;    margin-top: 0px !important;}</style>
 <div class="wrapper">
 <!--------Header--------->
    <!-------Header info------->
@@ -60,7 +70,7 @@ session_start();
 <!------Menu section-------->
 <!-- start header -->
 <div class="header sticky-navigation">
-     <span class="bottom-shadow1"></span>
+     
     <div class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
@@ -87,7 +97,7 @@ session_start();
 		   </div>
 			<div class="collapse navbar-collapse">
 				<?php	
-				if( is_single( array('1600','2223','2078','2041','2017','2021','1993','1995','1883','1885','1560','1558','1554','1552','1547','1545','1542','1540','1536','1534','1529','1527','1524','1519','891','884','1619','1614','1718','1845','1849'))) { 
+				if( is_single( array('1600','2689','2223','2628','2576','2078','2041','2017','2021','1993','1995','1883','1885','1560','1558','1554','1552','1547','1545','1542','1540','1536','1534','1529','1527','1524','1519','891','884','1619','1614','1718','1845','1849'))) { 
 
 	wp_nav_menu( array(  
 										'theme_location' => 'primary',

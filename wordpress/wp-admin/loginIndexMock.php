@@ -1,11 +1,6 @@
 <?php
 ob_start();
 session_start();
-if(isset( $_SESSION['completedmock'])){
-unset($_SESSION['completedmock']);
-header("Location: https://www.updatraining.com/mocknext/");
-exit();
-}
 $sessData = !empty($_SESSION['sessData']) ? $_SESSION['sessData'] : '';
 if (!empty($sessData['status']['msg'])) {
     $statusMsg     = $sessData['status']['msg'];
@@ -27,11 +22,15 @@ if (!empty($sessData['userLoggedIn']) && !empty($sessData['userID'])) {
     );
     $conditions['return_type'] = 'single';
     $userData                  = $user->getRows($conditions);
-?>
-	<a href="userAccountMock.php?logoutSubmit=1" class="logout">LOGOUT</a>
-	</br>
-<?php
-header("Location:  https://www.updatraining.com/combinedmock/");
+	
+	$link = mysqli_connect("localhost", "nirupan_admin", "niru@2089", "nirupan_updamech");
+if ($link === false) {
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+$login_id= $sessData['userID'];
+$_SESSION['loginID'] = $login_id;
+
+header("Location:https://www.updatraining.com/mock-test-main/");
 exit();
 } else {
 ?>

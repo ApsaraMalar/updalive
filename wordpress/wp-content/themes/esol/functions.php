@@ -1,4 +1,17 @@
 <?php
+add_action('wp_head', 'wpb_add_googleanalytics');
+function wpb_add_googleanalytics() { ?>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123354611-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123354611-1');
+</script> 
+<?php } ?>
+<?php
 function register_my_session()
 {
 	session_start();
@@ -112,7 +125,7 @@ if ($link === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 
-      if (isset($_SESSION['sessData'])) {
+      if (isset($_SESSION['token'])) {
          $items .= '<li class="right"><a href="https://www.updatraining.com/wp-admin/logout.php">'. __("LOGOUT") .'</a></li>';
 } 
 else {
