@@ -72,9 +72,6 @@ ul,ol{
   height:3px;
   width:75px;
 }
-.container1{
-	padding: 10px;
-}
 .panel-default > .panel-heading {
     color: #fff;
     padding:6px 15px !important ;
@@ -187,7 +184,7 @@ ul,ol{
     width: 100%;
     position: relative;
     z-index: 99999;
-	padding:30px 0 20px;
+	padding:25px 0 15px;
     background-color: #FFFFFF;
     box-shadow: 1px 0px 10px rgba(0,0,0,0.1);
 }
@@ -217,10 +214,10 @@ ul,ol{
 }
 .navbar-default .navbar-nav > li > a {
   color: #0F0F0F;
-  font-size:20px !important;
-   padding: 10px 18px;
-   margin-right: 3 px;
-  font-family: 'Times New Roman';
+  font-size:21px !important;
+   padding: 7px 11px;
+   margin-right: 1px;
+  font-family: 'SourceSansPro';
   font-weight:Bold;
   border-radius:2px;
   text-decoration: none;
@@ -351,7 +348,7 @@ ul,ol{
 .navbar-nav > li > a > i {
     font-size: 25px;
     line-height: 20px;
-    margin-left: 5px;
+    margin-left: 1px;
     padding-top: 0; 
 }
 .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
@@ -478,7 +475,7 @@ width:100%;
 .home_services_section {padding:76px 0 40px;}
 .main-title span {font-family: 'KarlaRegular'; font-weight:normal; } 
 .cdns-service-container {
-    margin: 0 0 50px;
+    margin: 0 0 5px;
 	text-align:left !important;
 }
 .cdns-theme-feature-icon {
@@ -503,7 +500,6 @@ width:100%;
 	transition: all 0.3s ease-out 0s;
 }
 .cdns-service-container:hover .cdns-theme-feature-icon{
-	border:solid 5px #3498db;
 	background:#3498db;
 	color:#fff;
 }
@@ -824,15 +820,15 @@ width:100%;
 .sidebar-section {
 	overflow: hidden;
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .sidebar-widget {
     margin-top: 0;
     overflow: hidden;
-    padding: 0px;
+    padding: 5px;
     background:#f7f7f7;
-    border: 1px solid #f7f7f7;
-    margin-bottom:20px;
+   
+    margin-bottom:10px;
 	box-shadow:0 0 2px rgba(0,0,0,0.2);
 }
 .sidebar-widget:last-child {
@@ -854,7 +850,7 @@ width:100%;
     background: #040408;
 }
 .widget-content{
-	padding: 15px;
+	padding: 18px;
     overflow: hidden;
 }
 /*----Sidebar Search-------*/
@@ -1223,7 +1219,6 @@ ul.list-info.one li a:hover, .c-post-content a:hover {
 }
 .content-container {
 	background: rgba(255, 0, 0, 0.1) none repeat scroll 0 0;
-	margin-top: 10px;
 	text-align: center;
 	width: 100%;
 	border:0;
@@ -1347,7 +1342,10 @@ iframe {
 	margin-top: 0px !important;
 } */
 .page-heading-section .overlay {
-	
+	background: none repeat scroll 0 0 rgb( 255,255,255);
+	padding: 5px 0 4px;
+	position: relative;
+	width: 100%;
 }
 .page-title {
 	background-position: center top;

@@ -69,7 +69,7 @@ else {
 	<img src="https://www.updatraining.com/wp-content/themes/esol/images/mail.jpg" width="50" height="33">
 	admin@updatraining.com</br></br>
 	<img src="https://www.updatraining.com/wp-content/themes/esol/images/phone.jpg" width="50" height="33">
-	+974-50255886</p>
+	+974-30161526</p>
   </div>
 
 </div>
